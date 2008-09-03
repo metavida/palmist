@@ -15,6 +15,7 @@ APP_CONFIG["palmist"].each do |key, value_hash|
   current_config["environment"] ||= "development"
   current_config["log_name"] ||= current_config["environment"] + ".log"
   current_config["name"] ||= key
+  current_config["rails_location"] = File.expand_path(current_config["rails_location"])
 
   current_config["log_location"] = File.join(current_config["rails_location"], "log", current_config["log_name"])
   
